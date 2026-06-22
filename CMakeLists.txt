@@ -48,7 +48,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
 add_subdirectory(src)
 
 # Add examples
-add_subdirectory(examples)
+option(MCP_BUILD_EXAMPLES "Build the examples" OFF)
+if(MCP_BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
 
 # Add test directory
 option(MCP_BUILD_TESTS "Build the tests" OFF)
